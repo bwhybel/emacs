@@ -1,0 +1,73 @@
+* Turn off toolbar
+#+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1)
+#+END_SRC
+* Turn off menu bar
+#+BEGIN_SRC emacs-lisp
+  (menu-bar-mode -1)
+#+END_SRC
+* Turn off scroll bar
+#+BEGIN_SRC emacs-lisp
+  (scroll-bar-mode -1)
+#+END_SRC
+* Turn off the startup message
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+#+END_SRC
+* Turn on misterioso theme
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'misterioso)
+#+END_SRC
+* Configure org bullets
+#+BEGIN_SRC emacs-lisp
+  (defun enable-org-bullets ()
+    "Function to enable org-bullet mode in org-mode"
+    (interactive)
+    (org-bullets-mode 1))
+
+  (use-package org-bullets
+    :ensure t
+    :config (add-hook 'org-mode-hook 'enable-org-bullets))
+#+END_SRC
+* Format tabs correctly
+#+BEGIN_SRC emacs-lisp
+  (setq tab-width 2)
+  (setq-default indent-tabs-mode nil)
+#+END_SRC
+* Remove trailing whitespace
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
+* Save current.file~ in alternate directory
+#+BEGIN_SRC emacs-lisp
+  (setq save-place-file (concat user-emacs-directory "places"))
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+						 "backups"))))
+#+END_SRC
+* Projectile for working in projects
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (projectile-mode t))
+#+END_SRC
+* Go mode
+#+BEGIN_SRC emacs-lisp
+  (defun bind-C-c-C-r-to-remove-unused-imports-in-go ()
+    "Function to bind 'C-c C-r' to remove unused imports in go"
+    (interactive)
+    (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports))
+
+  (defun bind-C-c-C-g-to-go-to-imports-in-go ()
+    "Function to bind 'C-c C-g' to move pointer to import list"
+    (interactive)
+    (local-set-key (kbd "C-c C-g") 'go-goto-imports))
+
+  (use-package go-mode
+    :ensure t
+    :config
+    (add-hook 'before-save-hook 'gofmt-before-save)
+    (add-hook 'go-mode-hook 'bind-C-c-C-r-to-remove-unused-imports-in-go)
+    (add-hook 'go-mode-hook 'bind-C-c-C-g-to-go-to-imports-in-go))
+#+END_SRC
