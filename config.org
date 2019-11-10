@@ -71,3 +71,22 @@
     (add-hook 'go-mode-hook 'bind-C-c-C-r-to-remove-unused-imports-in-go)
     (add-hook 'go-mode-hook 'bind-C-c-C-g-to-go-to-imports-in-go))
 #+END_SRC
+* Ivy, Counsel, Swiper
+#+BEGIN_SRC emacs-lisp
+  (use-package counsel
+    :ensure t
+    :bind
+    ("M-x" . counsel-M-x)
+    ("C-x C-f" . counsel-find-file)
+    ("C-c C-f" . counsel-describe-function)
+    ("C-c C-v" . counsel-describe-variable)
+    ("C-c a" . counsel-ag)
+    ("C-c g" . counsel-git)
+    ("C-c j" . counsel-git-grep)
+    ("\C-s" . swiper)
+    ("C-c l" . counsel-locate))
+#+END_SRC
+* Turn off wrapping around when line goes over
+#+BEGIN_SRC emacs-lisp
+  (setq-default truncate-lines t)
+#+END_SRC
