@@ -89,4 +89,16 @@
 * Turn off wrapping around when line goes over
 #+BEGIN_SRC emacs-lisp
   (setq-default truncate-lines t)
+* Ledger mode
+#+BEGIN_SRC emacs-lisp
+  (use-package ledger-mode
+    :ensure t
+    :mode ".ledger")
+#+END_SRC
+* Company mode
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :defer t
+    :init (global-company-mode))
 #+END_SRC
