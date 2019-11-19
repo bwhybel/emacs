@@ -129,3 +129,7 @@
   (use-package iedit
     :ensure t)
 #+END_SRC
+* Function for commenting
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-c l") 'comment-line)
+#+END_SRC
