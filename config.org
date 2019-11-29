@@ -1,3 +1,10 @@
+* Exec $PATH from shell
+#+BEGIN_SRC emacs-lisp
+  (if (eq system-type 'darwin)
+      (use-package exec-path-from-shell
+        :ensure t
+        :config (exec-path-from-shell-initialize)))
+#+END_SRC
 * Turn off toolbar
 #+BEGIN_SRC emacs-lisp
   (tool-bar-mode -1)
