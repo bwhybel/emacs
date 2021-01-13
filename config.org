@@ -25,17 +25,6 @@
 #+BEGIN_SRC emacs-lisp
   (load-theme 'misterioso)
 #+END_SRC
-* Configure org bullets
-#+BEGIN_SRC emacs-lisp
-  (defun enable-org-bullets ()
-    "Function to enable org-bullet mode in org-mode"
-    (interactive)
-    (org-bullets-mode 1))
-
-  (use-package org-bullets
-    :ensure t
-    :config (add-hook 'org-mode-hook 'enable-org-bullets))
-#+END_SRC
 * Format tabs correctly
 #+BEGIN_SRC emacs-lisp
   (setq tab-width 2)
