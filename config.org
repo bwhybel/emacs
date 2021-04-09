@@ -170,3 +170,18 @@
 #+BEGIN_SRC emacs-lisp
   (set-face-attribute 'default nil :family "Consolas" :height 144 :weight 'bold)
 #+END_SRC
+* Which Key
+#+BEGIN_SRC emacs-lisp
+  (use-package which-key
+    :ensure t
+    :init
+    (which-key-mode))
+#+END_SRC
+* LSP mode
+#+BEGIN_SRC emacs-lisp
+  (use-package lsp-mode
+    :ensure t
+    :init (
+           (setq lsp-keymap-prefix "C-c l")
+           (lsp-install-server `csharp)))
+#+END_SRC
