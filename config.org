@@ -168,5 +168,5 @@
 #+END_SRC
 * Set Fonts
 #+BEGIN_SRC emacs-lisp
-  (set-face-attribute 'default nil :font "Consolas-14")
+  (set-face-attribute 'default nil :family "Consolas" :height 144 :weight 'bold)
 #+END_SRC
