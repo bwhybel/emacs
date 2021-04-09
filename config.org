@@ -75,7 +75,7 @@
 * CSharp mode
   #+begin_src emacs-lisp
     (use-package csharp-mode
-      : ensure t)
+      :ensure t)
   #+end_src
 * Ivy, Counsel, Swiper
 #+BEGIN_SRC emacs-lisp
