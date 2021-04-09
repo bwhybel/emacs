@@ -73,10 +73,10 @@
     (add-hook 'go-mode-hook 'bind-C-c-C-g-to-go-to-imports-in-go))
 #+END_SRC
 * CSharp mode
-  #+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
     (use-package csharp-mode
       :ensure t)
-  #+end_src
+#+END_SRC
 * Ivy, Counsel, Swiper
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
@@ -165,4 +165,8 @@
 * Org Tempo
 #+BEGIN_SRC emacs-lisp
   (require 'org-tempo)
+#+END_SRC
+* Set Fonts
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'default nil :font "Consolas-14")
 #+END_SRC
