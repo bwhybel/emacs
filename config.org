@@ -72,6 +72,11 @@
     (add-hook 'go-mode-hook 'bind-C-c-C-r-to-remove-unused-imports-in-go)
     (add-hook 'go-mode-hook 'bind-C-c-C-g-to-go-to-imports-in-go))
 #+END_SRC
+* CSharp mode
+  #+begin_src emacs-lisp
+    (use-package csharp-mode
+      : ensure t)
+  #+end_src
 * Ivy, Counsel, Swiper
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
@@ -156,4 +161,8 @@
 * Highlight line
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode t)
+#+END_SRC
+* Org Tempo
+#+BEGIN_SRC emacs-lisp
+  (require 'org-tempo)
 #+END_SRC
