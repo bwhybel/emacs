@@ -74,8 +74,8 @@
 #+END_SRC
 * CSharp mode
 #+BEGIN_SRC emacs-lisp
-    (use-package csharp-mode
-      :ensure t)
+  (use-package csharp-mode
+    :ensure t)
 #+END_SRC
 * Ivy, Counsel, Swiper
 #+BEGIN_SRC emacs-lisp
@@ -149,6 +149,7 @@
     (c-set-offset 'inline-open '0))
   (add-hook 'c-mode-hook 'c-mode-indenting-defaults)
   (add-hook 'c++-mode-hook 'c-mode-indenting-defaults)
+  (add-hook 'csharp-mode-hook 'c-mode-indenting-defaults)
 #+END_SRC
 * Yasnippets
 #+BEGIN_SRC emacs-lisp
