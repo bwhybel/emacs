@@ -181,7 +181,19 @@
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-mode
     :ensure t
-    :init (
-           (setq lsp-keymap-prefix "C-c l")
-           (lsp-install-server `csharp)))
+    :hook
+    (csharp-mode . lsp)
+    (go-mode . lsp)
+    :commands lsp)
+
+  (use-package lsp-ivy
+    :requires (lsp-mode ivy)
+    :commands (lsp-ivy-workspace-symbol lsp-ivy-global-workspace-symbol))
+#+END_SRC
+* Dotnet CLI
+#+BEGIN_SRC emacs-lisp
+  (use-package dotnet
+    :ensure t
+    :hook
+    (csharp-mode . dotnet-mode))
 #+END_SRC
