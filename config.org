@@ -77,6 +77,11 @@
   (use-package csharp-mode
     :ensure t)
 #+END_SRC
+* CSProj mode
+#+BEGIN_SRC emacs-lisp
+    (use-package csproj-mode
+      :ensure t)
+  #+end_src
 * Ivy, Counsel, Swiper
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
@@ -146,7 +151,8 @@
         c-basic-offset 2)
   (defun c-mode-indenting-defaults ()
     (c-set-offset 'case-label '+)
-    (c-set-offset 'inline-open '0))
+    (c-set-offset 'inline-open '0)
+    (c-set-offset 'arglist-close '0))
   (add-hook 'c-mode-hook 'c-mode-indenting-defaults)
   (add-hook 'c++-mode-hook 'c-mode-indenting-defaults)
   (add-hook 'csharp-mode-hook 'c-mode-indenting-defaults)
