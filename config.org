@@ -27,7 +27,7 @@
 #+END_SRC
 * Format tabs correctly
 #+BEGIN_SRC emacs-lisp
-  (setq tab-width 2)
+  (setq tab-width 4)
   (setq-default indent-tabs-mode nil)
 #+END_SRC
 * Remove trailing whitespace
@@ -139,16 +139,10 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-c l") 'comment-line)
 #+END_SRC
-* Flycheck
-#+BEGIN_SRC emacs-lisp
-  (use-package flycheck
-    :ensure t
-    :init (global-flycheck-mode))
-#+END_SRC
 * C-Mode Changing indentations
 #+BEGIN_SRC emacs-lisp
   (setq c-default-style "linux"
-        c-basic-offset 2)
+        c-basic-offset 4)
   (defun c-mode-indenting-defaults ()
     (c-set-offset 'case-label '+)
     (c-set-offset 'inline-open '0)
@@ -190,6 +184,7 @@
     :ensure t
     :hook
     (csharp-mode . lsp)
+    (c++-mode . lsp)
     (go-mode . lsp)
     :commands lsp)
 
