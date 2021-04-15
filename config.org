@@ -158,14 +158,12 @@
     :init (yas-global-mode 1))
   (use-package yasnippet-snippets
     :ensure t)
+  (unless (file-directory-p (format "%ssnippets" user-emacs-directory))
+    (make-directory (format "%ssnippets" user-emacs-directory)))
 #+END_SRC
 * Highlight line
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode t)
-#+END_SRC
-* Org Tempo
-#+BEGIN_SRC emacs-lisp
-  (require 'org-tempo)
 #+END_SRC
 * Set Fonts
 #+BEGIN_SRC emacs-lisp
@@ -185,6 +183,7 @@
     :hook
     (csharp-mode . lsp)
     (c++-mode . lsp)
+    (c-mode . lsp)
     (go-mode . lsp)
     :commands lsp)
 
@@ -198,4 +197,13 @@
     :ensure t
     :hook
     (csharp-mode . dotnet-mode))
+#+END_SRC
+* Creat new folders if not there
+#+BEGIN_SRC emacs-lisp
+  (defun my-create-non-existent-directory ()
+    (let ((parent-directory (file-name-directory buffer-file-name)))
+      (when (and (not (file-exists-p parent-directory))
+                 (y-or-n-p (format "Directory `%s' does not exist! Create it?" parent-directory)))
+        (make-directory parent-directory t))))
+  (add-to-list 'find-file-not-found-functions #'my-create-non-existent-directory)
 #+END_SRC
