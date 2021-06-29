@@ -74,12 +74,6 @@
     :ensure t
     :config (ivy-mode))
 #+END_SRC
-* Counsel
-#+BEGIN_SRC emacs-lisp
-  (use-package counsel
-    :after ivy
-    :config (counsel-mode))
-#+END_SRC
 * Swiper
 #+BEGIN_SRC emacs-lisp
   (use-package swiper
