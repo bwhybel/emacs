@@ -46,3 +46,31 @@
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-reload-all)
+  (yas-global-mode))
+
+(use-package yasnippet-snippets
+  :ensure t)
+
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map)))
+
+(use-package counsel
+  :ensure t)
+
+(use-package swiper
+  :ensure t
+  :config (ivy-mode +1)
+  :bind (("C-s" . swiper-isearch)))
+
+(use-package which-key
+    :config
+    (which-key-mode))
