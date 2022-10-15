@@ -1,5 +1,5 @@
 (setq user-full-name "Brendan Weibel")
-(setq user-mail-address "bwhybel@icloud.com")
+(setq user-mail-address "me@bwhybel.com")
 
 (require 'package)
 (setq package-enable-at-startup nil)
