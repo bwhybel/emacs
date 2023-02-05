@@ -70,7 +70,3 @@
   :ensure t
   :config (ivy-mode +1)
   :bind (("C-s" . swiper-isearch)))
-
-(use-package which-key
-    :config
-    (which-key-mode))
