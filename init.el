@@ -70,3 +70,11 @@
   :ensure t
   :config (ivy-mode +1)
   :bind (("C-s" . swiper-isearch)))
+
+(require 'org-tempo)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ledger . t)))
+
+(use-package simple-httpd
+  :ensure t)
