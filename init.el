@@ -78,3 +78,6 @@
 
 (use-package simple-httpd
   :ensure t)
+
+(add-hook 'python-mode-hook '(lambda ()
+ (setq python-indent 2)))
