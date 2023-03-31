@@ -24,7 +24,7 @@
 (global-hl-line-mode t)
 
 (tool-bar-mode -1)
-(scroll-bar-mode -1)
+;; (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (setq inhibit-startup-message t)
 
@@ -71,13 +71,18 @@
   :config (ivy-mode +1)
   :bind (("C-s" . swiper-isearch)))
 
+(use-package org-contrib
+  :ensure t)
 (require 'org-tempo)
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((ledger . t)))
+ '((python . t)
+   (ledger . t)))
 
 (use-package simple-httpd
   :ensure t)
 
 (add-hook 'python-mode-hook '(lambda ()
  (setq python-indent 2)))
+
+(setq org-confirm-babel-evaluate nil)
